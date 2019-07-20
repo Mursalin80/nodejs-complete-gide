@@ -1,3 +1,3 @@
 let path = require("path");
 
-module.exports = path.dirname(process.mainModule.filename);
+module.exports.rootDir = path.dirname(process.mainModule.filename);
