@@ -6,8 +6,11 @@ const { rootDir } = require("../util/rootPath");
 let p = path.join(rootDir, "data", "products.json");
 
 module.exports = class Product {
-  constructor(title) {
+  constructor(title, img, desc, price) {
     this.title = title;
+    this.image = img;
+    this.description = desc;
+    this.price = price;
   }
 
   save() {
