@@ -2,11 +2,14 @@ let express = require("express");
 let path = require("path");
 let rootPath = require("../util/rootPath");
 
-// product controlls
+// Admin controllers
 const {
   getAddProduct,
   postAddProduct,
-  getProducts
+  getProducts,
+  getEditProduct,
+  postEditProduct,
+  postDeleteProduct
 } = require("../controllers/admin");
 
 let router = express.Router();
@@ -14,8 +17,13 @@ let router = express.Router();
 // use get add product controller
 router.get("/add-product", getAddProduct);
 router.get("/products", getProducts);
+router.get("/edit-product/:productId", getEditProduct);
+
+router.post("/edit-product", postEditProduct);
+
+router.post("/delete-product", postDeleteProduct);
 
 // use post add product controller
-router.post("/product", postAddProduct);
+router.post("/add-product", postAddProduct);
 
 module.exports.adminRouter = router;

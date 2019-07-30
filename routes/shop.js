@@ -10,14 +10,21 @@ const {
   getIndex,
   getCart,
   getCheckout,
-  getOrders
+  getOrders,
+  getProductDetail,
+  postCart,
+  postCartDeleteItem
 } = require("../controllers/shop");
 
 router.get("/", getIndex); // use controller in router
 
 router.get("/products", getProduct);
+router.get("/products/:id", getProductDetail);
 
 router.get("/cart", getCart);
+router.post("/cart", postCart);
+router.post("/cart-delete-item", postCartDeleteItem);
+
 router.get("/orders", getOrders);
 
 router.get("/checkout", getCheckout);
